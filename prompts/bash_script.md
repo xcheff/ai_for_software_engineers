@@ -1,0 +1,1 @@
+Write a Bash script that lists all JavaScript (.js) files in the current directory and its subdirectories, excluding any inside node_modules directories. Then, print the total number of lines across those files.

@@ -1,0 +1,1 @@
+Generate Jest unit tests for the following code, including edge cases and type validation.
