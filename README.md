@@ -1,91 +1,69 @@
-# Practical AI for Software Engineers
+# Practical AI for Software Engineers - Resources Repository
 
 ## 1. Project Overview
 
-This repository provides example scripts and prompt templates for software engineers interested in practical applications of AI and automation. The project includes JavaScript utilities for string analysis, arithmetic operations, benchmarking, and shell scripting, as well as prompt templates for various software engineering tasks. The code and prompts are referenced in the Medium article ["Practical AI for Software Engineers" by Edison Rodas](https://medium.com/@erodasd).
+This repository provides practical examples and prompt templates for software engineers interested in AI, algorithmic performance, and software architecture. It includes JavaScript implementations of classic algorithms (such as Fibonacci), benchmarking scripts, utility functions, and a collection of technical prompts for architectural and engineering discussions. The project is inspired by the Medium article ["Practical AI for Software Engineers" by Edison Rodas](https://medium.com/@erodasd).
 
-**Main technologies:**  
+**Main technologies used:**  
 - Node.js (JavaScript)
-- Bash
+- Bash (for utility scripts)
+- Jest (for testing)
+- Benchmark.js (for performance benchmarking)
 
 ---
 
 ## 2. Project Structure
 
-```
+<pre>
 .
-├── count_js_lines.sh              # Bash script to list JS files and count total lines
-├── index.js                       # Prints repository overview and welcome messages
-├── letterCount_optimized.js       # Counts vowels/consonants in a string (optimized)
-├── letterCount_regex.js           # Counts vowels/consonants in a string (regex)
-├── LICENSE                        # MIT License
-├── multiply.js                    # Multiplies integer arguments with validation
-├── multiply.test.js               # Jest-style tests for multiply.js
-├── optimization_check.js          # Benchmarks letterCount implementations
-├── package.json                   # Node.js project metadata
-├── README.md                      # Project documentation
-└── prompts/
-    ├── adr_dialog_state.md        # Prompt template (ADR dialog state)
-    ├── bash_script.md             # Prompt template (Bash script)
-    ├── generate_archutecture_diagram.md # Prompt template (architecture diagram)
-    ├── make_readme.md             # Prompt template (README generation)
-    ├── refactoring.md             # Prompt template (refactoring)
-    └── test_generation.md         # Prompt template (test generation)
-```
+├── benchmark_fibonnaci.js         # Benchmarks optimized vs. recursive Fibonacci implementations
+├── count_js_lines.sh              # Bash script to count lines in all JavaScript files
+├── fibonnaci_generator.js         # Optimized Fibonacci implementation using a generator
+├── fibonnaci_generator.test.js    # Jest tests for the generator-based Fibonacci
+├── fibonnaci_recursive.js         # Classic recursive Fibonacci implementation
+├── fibonnaci_recursive.test.js    # Jest tests for the recursive Fibonacci
+├── index.js                       # Prints project overview and reference info
+├── multiply.js                    # Utility: multiplies integer arguments with validation
+├── multiply.test.js               # Jest tests for multiply.js
+├── package.json                   # Project metadata, dependencies, and scripts
+├── prompts/                       # Technical prompt templates for software engineering scenarios
+│   ├── adr_dialog_state.md
+│   ├── bash_script.md
+│   ├── generate_archutecture_diagram.md
+│   ├── make_readme.md
+│   ├── refactoring.md
+│   └── test_generation.md
+└── .gitignore                     # Git ignore rules
+</pre>
 
 ---
 
 ## 3. Script Usage
 
+### JavaScript Scripts
+
+- **index.js**  
+  Prints a welcome message and project overview.  
+  _Run:_  
+  ```bash
+  node index.js
+  ```
+
+- **benchmark_fibonnaci.js**  
+  Benchmarks the performance of the optimized (generator) vs. original (recursive) Fibonacci implementations using Benchmark.js.  
+  _Run:_  
+  ```bash
+  node benchmark_fibonnaci.js
+  ```
+
 ### Shell Scripts
 
-- **count_js_lines.sh**
-  - **Purpose:** Lists all JavaScript files (excluding `node_modules`) and prints the total number of lines.
-  - **Usage:**
-    ```bash
-    bash count_js_lines.sh
-    ```
-
-### Node.js Scripts
-
-- **index.js**
-  - **Purpose:** Prints repository overview and welcome messages.
-  - **Usage:**
-    ```bash
-    node index.js
-    ```
-
-- **optimization_check.js**
-  - **Purpose:** Benchmarks and compares the performance of the two `letterCount` implementations (`OPTIMIZED` or `REGEX`).
-  - **Usage:**
-    ```bash
-    node optimization_check.js OPTIMIZED
-    node optimization_check.js REGEX
-    ```
-
-- **letterCount_optimized.js**
-  - **Purpose:** Exports a function to count vowels and consonants in a string using an optimized approach.
-  - **Usage:** (as a module)
-    ```js
-    const letterCount = require('./letterCount_optimized');
-    letterCount('example');
-    ```
-
-- **letterCount_regex.js**
-  - **Purpose:** Exports a function to count vowels and consonants in a string using regular expressions.
-  - **Usage:** (as a module)
-    ```js
-    const letterCount = require('./letterCount_regex');
-    letterCount('example');
-    ```
-
-- **multiply.js**
-  - **Purpose:** Exports `multiplyIntegers`, a function that multiplies integer arguments and throws a `TypeError` for non-integers.
-  - **Usage:** (as a module)
-    ```js
-    const { multiplyIntegers } = require('./multiply');
-    multiplyIntegers(2, 3, 4); // 24
-    ```
+- **count_js_lines.sh**  
+  Lists all JavaScript files (excluding node_modules) and prints the total number of lines.  
+  _Run:_  
+  ```bash
+  bash count_js_lines.sh
+  ```
 
 ---
 
@@ -93,33 +71,36 @@ This repository provides example scripts and prompt templates for software engin
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (recommended v14 or higher)
-- Bash shell (for running `.sh` scripts)
+- [Node.js](https://nodejs.org/) (version 14 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- Bash shell (for running `.sh` scripts, available on macOS/Linux)
 
-### Install
+### Installation
 
-No dependencies are required. If you wish to add dependencies or use a package manager, run:
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:xcheff/ai_for_software_engineers.git
+   cd ai_for_software_engineers
+   ```
 
-```bash
-npm install
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### Environment Setup
+### Running the Project
 
-No environment variables or configuration files are required.
-
-### How to Run
-
-- Print repository overview:
+- To print the project overview:
   ```bash
   node index.js
   ```
-- Benchmark letterCount implementations:
+
+- To benchmark Fibonacci implementations:
   ```bash
-  node optimization_check.js OPTIMIZED
-  node optimization_check.js REGEX
+  node benchmark_fibonnaci.js
   ```
-- List JavaScript files and count lines:
+
+- To count JavaScript lines:
   ```bash
   bash count_js_lines.sh
   ```
@@ -129,18 +110,18 @@ No environment variables or configuration files are required.
 ## 5. Development & Testing
 
 - **Development:**  
-  Edit or add scripts in the project root or `prompts/` directory as needed.
+  Edit or add JavaScript files as needed. Utility and algorithm scripts are modular and can be extended.
 
 - **Testing:**  
-  The project includes Jest-style tests for `multiply.js` in `multiply.test.js`.  
-  To run the tests, install Jest globally or as a dev dependency, then run:
+  This project uses [Jest](https://jestjs.io/) for unit testing.  
+  To run all tests with coverage:
   ```bash
-  npx jest multiply.test.js
+  npm test
   ```
-  > Note: The `npm test` script is a placeholder and does not run tests by default.
+  Test files are named with the `.test.js` suffix and cover all major modules.
 
 ---
 
 ## 6. License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
