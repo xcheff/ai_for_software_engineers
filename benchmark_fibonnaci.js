@@ -4,7 +4,7 @@ const Benchmark = require("benchmark");
 let optimized, unoptimized;
 
 try {
-  optimized = require("./fibonnaci_generator.js");
+  optimized = require("./fibonnaci_optimized.js");
   unoptimized = require("./fibonnaci_recursive.js");
 } catch (err) {
   console.error("Error loading modules:", err.message);
@@ -16,7 +16,7 @@ console.log("\nRunning benchmark for OPTIMIZED vs ORIGINAL...\n");
 const suite = new Benchmark.Suite();
 
 suite
-  .add("OPTIMIZED Fibonnaci f(35) - generator version", function () {
+  .add("OPTIMIZED Fibonnaci f(35) - optimized version", function () {
     optimized(35);
   })
   .add("ORIGINAL Fibonacci f(35) - recursive version", function () {

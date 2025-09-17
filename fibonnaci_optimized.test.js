@@ -1,4 +1,4 @@
-const fibonacci = require('./fibonnaci_generator.js');
+const fibonacci = require('./fibonnaci_optimized.js');
 const { performance, PerformanceObserver } = require('perf_hooks');
 
 describe('fibonacci', () => {
